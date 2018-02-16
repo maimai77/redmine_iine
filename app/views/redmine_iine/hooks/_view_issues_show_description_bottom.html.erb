@@ -1,4 +1,7 @@
-<%= link_to 'イイネ', '#', class: 'redmine-iine', style: 'display: none;' %>
+<div id="redmine-iine" style="display: none;">
+  <%= link_to 'イイネ', '#', class: 'redmine-iine' %>
+  <span><%= issue.iine_count %>件</span>
+</div>
 
 <script>
   $('.redmine-iine').on('click', function(e) {
@@ -7,6 +10,6 @@
   });
 
   $(function() {
-    $('.redmine-iine').prependTo('#content .contextual').show();
+    $('#redmine-iine').children().prependTo('#content .contextual');
   });
 </script>
