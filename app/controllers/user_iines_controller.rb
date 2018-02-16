@@ -5,7 +5,7 @@ class UserIinesController < ApplicationController
 
   def create
     @issue.create_iine_counter unless @issue.iine_counter
-    IineCounter.increment_counter :count, @issue.iine_counter
+    UserIine.find_or_create_by!(iine_counter: @issue.iine_counter, user: User.current)
     @issue.iine_counter.reload
     render partial: 'redmine_iine/iine', locals: { issue: @issue }
   end
