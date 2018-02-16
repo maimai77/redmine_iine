@@ -1,2 +1,6 @@
-<%= link_to 'イイネ', '#', class: 'redmine-iine' %>
+<% if User.current.iine?(issue) %>
+  <%= link_to 'イイネヤメル', '#', class: 'redmine-iine', data: { custom_method: 'DELETE' } %>
+<% else %>
+  <%= link_to 'イイネ', '#', class: 'redmine-iine', data: { custom_method: 'POST' } %>
+<% end %>
 <span><%= issue.iine_count %>件</span>

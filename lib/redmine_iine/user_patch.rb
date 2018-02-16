@@ -7,6 +7,10 @@ module RedmineIine
     included do
       has_many :user_iines, dependent: :destroy
     end
+
+    def iine?(issue)
+      UserIine.exists?(iine_counter: issue.iine_counter, user: self)
+    end
   end
 
   ActiveSupport::Reloader.to_prepare do

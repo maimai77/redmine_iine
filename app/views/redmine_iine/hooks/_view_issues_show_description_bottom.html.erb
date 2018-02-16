@@ -8,7 +8,7 @@
   $(document).on('click', '.redmine-iine', function(e) {
     e.preventDefault();
     $.ajax({
-      method: 'POST',
+      method: $(this).data('custom-method'),
       url: '<%= iine_issue_path(issue) %>',
     }).done(function(html) {
       $('.redmine-iine-partial').html(html);
