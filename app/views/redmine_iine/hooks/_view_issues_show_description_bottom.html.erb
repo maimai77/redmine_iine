@@ -6,7 +6,10 @@
 <script>
   $('.redmine-iine').on('click', function(e) {
     e.preventDefault();
-    alert('イイネ！');
+    $.ajax({
+      method: 'POST',
+      url: '<%= iine_issue_path(issue) %>',
+    });
   });
 
   $(function() {
