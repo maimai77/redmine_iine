@@ -8,5 +8,5 @@ require_dependency 'redmine_iine/user_patch'
 Redmine::Plugin.register :redmine_iine do
   name 'Redmine イイネ Plugin'
   author 'maimai77'
-  version '0.0.1'
+  version '1.0.0'
 end
