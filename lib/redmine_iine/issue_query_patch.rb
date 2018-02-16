@@ -21,10 +21,10 @@ module RedmineIine
         [super, "LEFT OUTER JOIN #{IineCounter.table_name} ON #{IineCounter.table_name}.issue_id = #{queried_table_name}.id"].join(' ')
       end
     end
+  end
 
-    ActiveSupport::Reloader.to_prepare do
-      IssueQuery.include Include
-      IssueQuery.prepend Prepend
-    end
+  ActiveSupport::Reloader.to_prepare do
+    IssueQuery.include IssueQueryPatch::Include
+    IssueQuery.prepend IssueQueryPatch::Prepend
   end
 end
