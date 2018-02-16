@@ -1,10 +1,11 @@
 <div id="redmine-iine" style="display: none;">
-  <%= link_to 'イイネ', '#', class: 'redmine-iine' %>
-  <span><%= issue.iine_count %>件</span>
+  <span class="redmine-iine-partial">
+    <%== render partial: 'redmine_iine/iine', locals: { issue: issue } %>
+  </span>
 </div>
 
 <script>
-  $('.redmine-iine').on('click', function(e) {
+  $(document).on('click', '.redmine-iine', function(e) {
     e.preventDefault();
     $.ajax({
       method: 'POST',
