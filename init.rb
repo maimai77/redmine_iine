@@ -2,6 +2,7 @@
 
 require_dependency 'redmine_iine/hook'
 require_dependency 'redmine_iine/issue_patch'
+require_dependency 'redmine_iine/issue_query_patch'
 
 Redmine::Plugin.register :redmine_iine do
   name 'Redmine イイネ Plugin'
