@@ -1,0 +1,12 @@
+<%= link_to 'イイネ', '#', class: 'redmine-iine', style: 'display: none;' %>
+
+<script>
+  $('.redmine-iine').on('click', function(e) {
+    e.preventDefault();
+    alert('イイネ！');
+  });
+
+  $(function() {
+    $('.redmine-iine').prependTo('#content .contextual').show();
+  });
+</script>

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_dependency 'redmine_iine/hook'
+
 Redmine::Plugin.register :redmine_iine do
   name 'Redmine イイネ Plugin'
   author 'maimai77'
