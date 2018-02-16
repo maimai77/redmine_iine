@@ -10,6 +10,8 @@
     $.ajax({
       method: 'POST',
       url: '<%= iine_issue_path(issue) %>',
+    }).done(function(html) {
+      $('.redmine-iine-partial').html(html);
     });
   });
 
